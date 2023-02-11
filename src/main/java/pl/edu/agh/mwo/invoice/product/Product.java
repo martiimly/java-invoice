@@ -17,11 +17,8 @@ public abstract class Product {
         if (name == null || name.isEmpty() ) {
             throw new IllegalArgumentException("Wrong name!");
         }
-        if (price == null) {
+        if (price == null || price.compareTo(BigDecimal.ZERO) == -1) {
             throw new IllegalArgumentException("Wrong price!");
-        }
-        if (price.compareTo(BigDecimal.ZERO)<0) {
-            throw new IllegalArgumentException("Price can't be negative!");
         }
     }
 
